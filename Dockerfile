@@ -64,6 +64,6 @@ RUN sed -i 's#\/var\/www\/html#\/var\/www#g' /etc/httpd/conf/httpd.conf
 
 RUN echo -e 'XBitHack on\n<Directory /var/www/>\nOptions +Includes\n</Directory>' >> /etc/httpd/conf/httpd.conf
 
-RUN echo "if [[] ! $(ls -A /usr/local/bin) ]]; then git clone https://github.com/fsugenomics/cruise_scripts /usr/local/bin && update_www; fi" > /usr/bin/update && chmod +x /usr/bin/update
+RUN echo "if [[ ! $(ls -A /usr/local/bin) ]]; then git clone https://github.com/fsugenomics/cruise_scripts /usr/local/bin && update_www; fi" > /usr/bin/update && chmod +x /usr/bin/update
 
 CMD ["update"]
