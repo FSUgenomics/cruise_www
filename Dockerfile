@@ -1,5 +1,5 @@
 
-FROM vera/kent:latest
+FROM vera/cruise_base:latest
 
 MAINTAINER "Daniel Vera" vera@genomics.fsu.edu
 VOLUME /gbdb
