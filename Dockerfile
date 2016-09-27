@@ -64,6 +64,6 @@ RUN sed -i 's#\/var\/www\/html#\/var\/www#g' /etc/httpd/conf/httpd.conf
 
 RUN echo -e 'XBitHack on\n<Directory /var/www/>\nOptions +Includes\n</Directory>' >> /etc/httpd/conf/httpd.conf
 
-RUN echo "if [[ ! $(ls -A /usr/local/bin) ]]; then git clone https://github.com/fsugenomics/cruise_scripts /usr/local/bin; fi ; start_www" > /usr/bin/start && chmod +x /usr/bin/start
+RUN echo 'if [[ ! $(ls -A /usr/local/bin) ]]; then git clone https://github.com/fsugenomics/cruise_scripts /usr/local/bin; fi ; start_www' > /usr/bin/start && chmod +x /usr/bin/start
 
 CMD ["start"]
